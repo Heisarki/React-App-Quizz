@@ -1,0 +1,14 @@
+/* Animation */
+
+.Animation{
+    animation: 900ms 900ms ease-in-out;
+  }
+  
+  @keyframes slider{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+  }

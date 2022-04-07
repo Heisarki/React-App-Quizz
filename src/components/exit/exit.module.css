@@ -11,7 +11,17 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    border: 1px solid #ccc
+    border: 1px solid #ccc;
+    animation: slider 900ms ease-in-out;
+}
+
+@keyframes slider{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
 }
 
 .text h3{

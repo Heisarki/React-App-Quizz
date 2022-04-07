@@ -2,6 +2,16 @@
     display: grid;
     grid-template-rows: 2fr 1fr;
     height: 92vh;
+    
+}
+
+@keyframes slider{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
 }
 .text{
     display: flex;
@@ -11,7 +21,8 @@
     justify-content: flex-end;
     padding: 0 15vw 13vw 15vw;
     background-color: white;
-    border: 1px solid #ccc
+    border: 1px solid #ccc;
+    animation: slider 900ms ease-in;
 }
 
 .text h3{

@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './exit.module.css'
+import '../Animation.css'
 
 import { useNavigate } from 'react-router-dom';
 

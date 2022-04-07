@@ -2,6 +2,16 @@
     display: grid;
     grid-template-rows: 2fr 1fr;
     height: 92vh;
+    animation: slider 900ms ease-in-out;
+}
+
+@keyframes slider{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
 }
 .text{
     display: flex;

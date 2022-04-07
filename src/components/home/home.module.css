@@ -3,7 +3,18 @@
     grid-template-rows: 1fr 1fr;
     background-color: white;
     height: 92vh;
+    animation: slider 900ms ease-in-out;
 }
+
+@keyframes slider{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
 .description{
     /* background-color: rgb(0, 162, 255); */
     background-color: black;
