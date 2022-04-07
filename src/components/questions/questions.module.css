@@ -2,7 +2,7 @@
     background-color: white;
     border: 1px solid #ccc;
     box-shadow: 0 0 5px #ccc;
-    height: 62vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,22 +28,52 @@
     background-color: black;
     margin: 1px;
     transition: 0.5s;
-    padding: 8px;
-
-    
+    padding: 8px;    
 }
 
 .options:hover{
     margin: 20px;
 }
 
+/* Showing correct of wrong answer */
 
-.next{
-    height: 23vh;
+.correct-answer{
+    background-color: green;
+}
+.wrong-answer{
+    background-color: red;
+}
+
+
+
+.submit{
+    height: 30vh;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: flex-end;
     background-color: white;
     padding-right: 10vw;
-    padding-top: 50px;
+}
+
+.number{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.nextPrev{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0 10vw 0 10vw;
+}
+.nextPrev button{
+    font-size: 8px;
+    padding: 4px 10px;
+}
+
+.nextPrev button:hover{
+    background-color: black;
+    color: white;
 }

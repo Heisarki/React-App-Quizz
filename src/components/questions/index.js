@@ -11,8 +11,8 @@ export default function Questions() {
   return (
       <>
           <Form />
-          <div className={style.next}>
-              <button onClick={()=>{navigate('/getresult')}}>Next</button>
+          <div className={style.submit}>
+              <button onClick={()=>{navigate('/getresult')}}>Submit</button>
           </div>
       </>
       
