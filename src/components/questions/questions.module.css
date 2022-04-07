@@ -8,19 +8,35 @@
     justify-content: center;
     padding: 0 10vw 0 10vw;
     text-decoration: none;
+
+    animation: sliderRight 1s ease-in;
+    
+}
+
+.form2{
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10vw 0 10vw;
+    text-decoration: none;
+
+    animation: sliderLeft 1.5s ease-out;
     
 }
 
 
+
 .questions{
     font-size: 16px;
-    animation: sliderLeft 1.5s ease-out;
     
 }
 
 .answers {
     border: 1px solid #ccc;
-    animation: sliderRight 1s ease-in;
 }
 
 @keyframes sliderRight{

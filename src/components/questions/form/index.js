@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import style from '../questions.module.css'
 import { data } from '../../../api/data'
 // import './select.css'
@@ -10,6 +10,7 @@ export default function () {
     // }
 
     const [nextQuestions, setNext] = useState(0)
+    const [bool, setBool] = useState(true)
     // const [prevQuestions, setPrev] = useState(nextQuestions)
 
     
@@ -17,10 +18,14 @@ export default function () {
     // const form = data.map((data, index) =>
 
     // )
+
+    useEffect(()=>{
+        console.log("useEffect Run")
+    },[nextQuestions])
+    
     const list = (i) => {
             return(
-                <form className={style.form}>
-
+                <form className={bool ? `${style.form}` : `${style.form2}`}>
                     <h1 className={style.number}>{i + 1}</h1>
                     <h1 className={style.questions}>{data[i].question}</h1>
                     
@@ -48,9 +53,11 @@ export default function () {
 
     const next = () => {
         setNext(prev => prev + 1)
+        setBool(!bool)
     } 
     const prev = () => {
         setNext(prev => prev - 1)
+        setBool(!bool)
     }
   return (
       <div>
