@@ -11,6 +11,10 @@ export default function () {
 
     const [nextQuestions, setNext] = useState(0)
     const [bool, setBool] = useState(true)
+
+    const [answer, setAnswer] = useState(true)
+   
+    const checked = true;
     // const [prevQuestions, setPrev] = useState(nextQuestions)
 
     
@@ -20,33 +24,35 @@ export default function () {
     // )
 
     useEffect(()=>{
-        console.log("useEffect Run")
+        console.log(`log ${answer}`)
     },[nextQuestions])
     
-    const list = (i) => {
+    const list = (questionsNumber) => {
             return(
                 <form className={bool ? `${style.form}` : `${style.form2}`}>
-                    <h1 className={style.number}>{i + 1}</h1>
-                    <h1 className={style.questions}>{data[i].question}</h1>
+                    <h1 className={style.number}>{questionsNumber + 1}</h1>
+                    <h1 className={style.questions}>{data[questionsNumber].question}</h1>
                     
                     <div className={style.answers}>
                         <div className={style.options}>
-                            <input id='a' type="radio" />
-                            <label htmlFor='a'>{data[i].answers.answer_a}</label>
+                            <input id='a' type="radio" name="foo" checked={checked}/>
+                            <label htmlFor='a'>{data[questionsNumber].answers.answer_a}</label>
                         </div>
                         <div className={style.options}>
-                            <input id='b' type="radio" />
-                            <label htmlFor='b'>{data[i].answers.answer_b}</label>
+                            <input id='b' type="radio" name="foo" checked={checked}/>
+                            <label htmlFor='b'>{data[questionsNumber].answers.answer_b}</label>
                         </div>
                         <div className={style.options}>
-                            <input id='c' type="radio" />
-                            <label htmlFor='c'>{data[i].answers.answer_c}</label>
+                            <input id='c' type="radio" name="foo" checked={checked}/>
+                            <label htmlFor='c'>{data[questionsNumber].answers.answer_c}</label>
                         </div>
                         <div className={style.options}>
-                            <input id='d' type="radio" />
-                            <label htmlFor='d'>{data[i].answers.answer_d}</label>
+                            <input id='d' type="radio" name="foo" checked={checked}/>
+                            <label htmlFor='d'>{data[questionsNumber].answers.answer_d}</label>
                         </div>
+                        <input id={style.hide} type="radio" name="foo" checked={checked}/>
                     </div>
+
                 </form>
             )
     }
@@ -116,3 +122,32 @@ export default function () {
     </div>
 </div>
 </form> */}
+
+
+
+// <div className={style.answers}>
+//                         <div className={answer ? `${style.options}` : `${style.options2}`}>
+//                             <input id='a' type="radio" onClick={()=>{
+//                                 setAnswer(data[i].correct_answers.answer_a_correct)
+//                                 console.log(`log ${answer}`)}} />
+//                             <label htmlFor='a'>{data[i].answers.answer_a}</label>
+//                         </div>
+//                         <div className={answer ? `${style.options}` : `${style.options2}`}>
+//                             <input id='b' type="radio" onClick={()=>{
+//                                 setAnswer(data[i].correct_answers.answer_b_correct)
+//                                 console.log(`log ${answer}`)}} />
+//                             <label htmlFor='b'>{data[i].answers.answer_b}</label>
+//                         </div>
+//                         <div className={answer ? `${style.options}` : `${style.options2}`}>
+//                             <input id='c' type="radio" onClick={()=>{
+//                                 setAnswer(data[i].correct_answers.answer_c_correct)
+//                                 console.log(`log ${answer}`)}} />
+//                             <label htmlFor='c'>{data[i].answers.answer_c}</label>
+//                         </div>
+//                         <div className={answer ? `${style.options}` : `${style.options2}`}>
+//                             <input id='d' type="radio" onClick={()=>{
+//                                 setAnswer(data[i].correct_answers.answer_d_correct)
+//                                 console.log(`log ${answer}`)}} />
+//                             <label htmlFor='d'>{data[i].answers.answer_d}</label>
+//                         </div>
+//                     </div>

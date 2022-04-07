@@ -9,7 +9,7 @@
     padding: 0 10vw 0 10vw;
     text-decoration: none;
 
-    animation: sliderRight 1s ease-in;
+    animation: sliderRight 1.5s ease-in;
     
 }
 
@@ -69,6 +69,12 @@
     transition: 0.5s;
     padding: 8px;    
 }
+.options2{
+    background-color: green;
+    margin: 2px;
+    transition: 0.5s;
+    padding: 7px;    
+}
 
 .options:hover{
     margin: 20px;
@@ -115,4 +121,8 @@
 .nextPrev button:hover{
     background-color: black;
     color: white;
+}
+
+#hide{
+    display: none;
 }
