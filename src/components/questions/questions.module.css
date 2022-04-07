@@ -114,8 +114,8 @@
     padding: 0 10vw 0 10vw;
 }
 .nextPrev button{
-    font-size: 8px;
-    padding: 4px 10px;
+    font-size: 12px;
+    padding: 10px 20px;
 }
 
 .nextPrev button:hover{
