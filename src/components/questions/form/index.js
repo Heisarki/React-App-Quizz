@@ -87,7 +87,7 @@ export default function () {
         console.log(`${nextQuestions - 1} ${data[nextQuestions - 1].correct_answers.answer_d_correct}`)
         
     }
-
+    // console.log(nextQuestions)
     console.log(nextQuestions)
   return (
       <div>
