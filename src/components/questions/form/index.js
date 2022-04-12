@@ -1,70 +1,94 @@
 import React, { useState, useEffect }  from 'react'
 import style from '../questions.module.css'
 import { data } from '../../../api/data'
-// import './select.css'
 
 export default function () {
 
-    // const select = () => {
-    //     console.log(data.correct_answers.answer_a_correct)
-    // }
-
     const [nextQuestions, setNext] = useState(0)
-    const [bool, setBool] = useState(true)
+    const [answers, setAnswer] = useState([
+        {
+            q_number: null,
+            answer: null
+        }
+    ])
 
-    const [answer, setAnswer] = useState(true)
-   
-    const checked = true;
-    // const [prevQuestions, setPrev] = useState(nextQuestions)
-
+    useEffect(() => {
+        setAnswer([{ q_number: 1, answer: data[0].correct_answers.answer_a_correct }])
+        
+    }, [])
     
+    // console.log("This is an aray of answer")
+    console.log(answers)
 
-    // const form = data.map((data, index) =>
-
-    // )
-
-    useEffect(()=>{
-        console.log(`log ${answer}`)
-    },[nextQuestions])
-    
     const list = (questionsNumber) => {
+
+        // console.log("List of answer")
+        // console.log(`${questionsNumber} ${data[questionsNumber].correct_answers.answer_a_correct}`)
+        // console.log(`${questionsNumber} ${data[questionsNumber].correct_answers.answer_b_correct}`)
+        // console.log(`${questionsNumber} ${data[questionsNumber].correct_answers.answer_c_correct}`)
+        // console.log(`${questionsNumber} ${data[questionsNumber].correct_answers.answer_d_correct}`)
+        
+        // setAnswer(()=>'data')
+        // setAnswer([...answers, data[questionsNumber].correct_answers.answer_b_correct])
+        // setAnswer([...answers, data[questionsNumber].correct_answers.answer_c_correct])
+        // setAnswer([...answers, data[questionsNumber].correct_answers.answer_d_correct])
+
+
             return(
-                <form className={bool ? `${style.form}` : `${style.form2}`}>
+                <form className={true ? `${style.form}` : `${style.form2}`}>
                     <h1 className={style.number}>{questionsNumber + 1}</h1>
                     <h1 className={style.questions}>{data[questionsNumber].question}</h1>
                     
                     <div className={style.answers}>
                         <div className={style.options}>
-                            <input id='a' type="radio" name="foo" checked={checked}/>
-                            <label htmlFor='a'>{data[questionsNumber].answers.answer_a}</label>
+                            <input id='a' type="radio" name="foo" />
+                            <label htmlFor='a'>{data[questionsNumber].answers.answer_a} >>> Answer {data[questionsNumber].correct_answers.answer_a_correct}</label>
                         </div>
                         <div className={style.options}>
-                            <input id='b' type="radio" name="foo" checked={checked}/>
-                            <label htmlFor='b'>{data[questionsNumber].answers.answer_b}</label>
+                            <input id='b' type="radio" name="foo" />
+                            <label htmlFor='b'>{data[questionsNumber].answers.answer_b} >>> Answer {data[questionsNumber].correct_answers.answer_b_correct}</label>
                         </div>
                         <div className={style.options}>
-                            <input id='c' type="radio" name="foo" checked={checked}/>
-                            <label htmlFor='c'>{data[questionsNumber].answers.answer_c}</label>
+                            <input id='c' type="radio" name="foo" />
+                            <label htmlFor='c'>{data[questionsNumber].answers.answer_c} >>> Answer {data[questionsNumber].correct_answers.answer_c_correct}</label>
                         </div>
                         <div className={style.options}>
-                            <input id='d' type="radio" name="foo" checked={checked}/>
-                            <label htmlFor='d'>{data[questionsNumber].answers.answer_d}</label>
+                            <input id='d' type="radio" name="foo" />
+                            <label htmlFor='d'>{data[questionsNumber].answers.answer_d} >>> Answer {data[questionsNumber].correct_answers.answer_d_correct}</label>
                         </div>
-                        <input id={style.hide} type="radio" name="foo" checked={checked}/>
+                        <input id={style.hide} type="radio" name="foo" checked={true} />
                     </div>
-
                 </form>
             )
     }
 
     const next = () => {
         setNext(prev => prev + 1)
-        setBool(!bool)
+        console.log("List of answer")
+        console.log(nextQuestions)
+        
+        console.log(`${nextQuestions + 1} ${data[nextQuestions + 1].correct_answers.answer_a_correct}`)
+        console.log(`${nextQuestions + 1} ${data[nextQuestions + 1].correct_answers.answer_b_correct}`)
+        console.log(`${nextQuestions + 1} ${data[nextQuestions + 1].correct_answers.answer_c_correct}`)
+        console.log(`${nextQuestions + 1} ${data[nextQuestions + 1].correct_answers.answer_d_correct}`)
+        
+        // setAnswer([...answers, data[nextQuestions].correct_answers.answer_a_correct])
+        // setAnswer([...answers, data[nextQuestions].correct_answers.answer_b_correct])
+        // setAnswer([...answers, data[nextQuestions].correct_answers.answer_c_correct])
+        // setAnswer([...answers, data[nextQuestions].correct_answers.answer_d_correct])
+        setAnswer([...answers, { q_number: nextQuestions + 2, answer: data[nextQuestions + 1].correct_answers.answer_a_correct }])
+
     } 
     const prev = () => {
         setNext(prev => prev - 1)
-        setBool(!bool)
+        console.log(`${nextQuestions -1} ${data[nextQuestions -1].correct_answers.answer_a_correct}`)
+        console.log(`${nextQuestions -1} ${data[nextQuestions -1].correct_answers.answer_b_correct}`)
+        console.log(`${nextQuestions -1} ${data[nextQuestions -1].correct_answers.answer_c_correct}`)
+        console.log(`${nextQuestions - 1} ${data[nextQuestions - 1].correct_answers.answer_d_correct}`)
+        
     }
+
+    console.log(nextQuestions)
   return (
       <div>
           {list(nextQuestions)}
