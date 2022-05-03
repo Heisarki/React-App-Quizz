@@ -8,17 +8,19 @@ export default function () {
     const [answers, setAnswer] = useState([
         {
             q_number: null,
-            answer: null
+            answer_a: null,
+            answer_b: null,
+            answer_c: null,
+            answer_d: null
         }
     ])
 
-    useEffect(() => {
-        setAnswer([{ q_number: 1, answer: data[0].correct_answers.answer_a_correct }])
-        
-    }, [])
-    
-    // console.log("This is an aray of answer")
+    console.log("Start")
     console.log(answers)
+
+    const getValue = () => {
+        
+    }
 
     const list = (questionsNumber) => {
 
@@ -56,45 +58,46 @@ export default function () {
                             <input id='d' type="radio" name="foo" />
                             <label htmlFor='d'>{data[questionsNumber].answers.answer_d} >>> Answer {data[questionsNumber].correct_answers.answer_d_correct}</label>
                         </div>
-                        <input id={style.hide} type="radio" name="foo" checked={true} />
+                        <input id={style.hide} type="radio" name="foo" checked={true} onChange={getValue}/>
                     </div>
                 </form>
             )
     }
 
+    useEffect(() => {
+        console.log(nextQuestions +1 )  
+        console.log(`${nextQuestions +1} ${data[nextQuestions].correct_answers.answer_a_correct}`)
+        console.log(`${nextQuestions +1} ${data[nextQuestions].correct_answers.answer_b_correct}`)
+        console.log(`${nextQuestions+1} ${data[nextQuestions].correct_answers.answer_c_correct}`)
+        console.log(`${nextQuestions + 1} ${data[nextQuestions].correct_answers.answer_d_correct}`)
+
+        setAnswer([...answers, {
+            q_number: nextQuestions + 1,
+            answer_a: data[nextQuestions].correct_answers.answer_a_correct,
+            answer_b: data[nextQuestions].correct_answers.answer_b_correct,
+            answer_c: data[nextQuestions].correct_answers.answer_c_correct,
+            answer_d: data[nextQuestions].correct_answers.answer_d_correct
+        }])
+    },[nextQuestions])
+
     const next = () => {
         setNext(prev => prev + 1)
-        console.log("List of answer")
-        console.log(nextQuestions)
-        
-        console.log(`${nextQuestions + 1} ${data[nextQuestions + 1].correct_answers.answer_a_correct}`)
-        console.log(`${nextQuestions + 1} ${data[nextQuestions + 1].correct_answers.answer_b_correct}`)
-        console.log(`${nextQuestions + 1} ${data[nextQuestions + 1].correct_answers.answer_c_correct}`)
-        console.log(`${nextQuestions + 1} ${data[nextQuestions + 1].correct_answers.answer_d_correct}`)
-        
-        // setAnswer([...answers, data[nextQuestions].correct_answers.answer_a_correct])
-        // setAnswer([...answers, data[nextQuestions].correct_answers.answer_b_correct])
-        // setAnswer([...answers, data[nextQuestions].correct_answers.answer_c_correct])
-        // setAnswer([...answers, data[nextQuestions].correct_answers.answer_d_correct])
-        setAnswer([...answers, { q_number: nextQuestions + 2, answer: data[nextQuestions + 1].correct_answers.answer_a_correct }])
+        console.log("On clicking Next")
 
     } 
     const prev = () => {
         setNext(prev => prev - 1)
-        console.log(`${nextQuestions -1} ${data[nextQuestions -1].correct_answers.answer_a_correct}`)
-        console.log(`${nextQuestions -1} ${data[nextQuestions -1].correct_answers.answer_b_correct}`)
-        console.log(`${nextQuestions -1} ${data[nextQuestions -1].correct_answers.answer_c_correct}`)
-        console.log(`${nextQuestions - 1} ${data[nextQuestions - 1].correct_answers.answer_d_correct}`)
-        
+
     }
-    // console.log(nextQuestions)
-    console.log(nextQuestions)
+    
+    
   return (
       <div>
           {list(nextQuestions)}
           <div className={style.nextPrev}>
             <button onClick={prev}>prev</button>
-            <button onClick={next}>next</button>       
+              <button onClick={next}>next</button>
+              <button onClick={()=>{console.log(answers)}}>show all</button> 
           </div>
     </div>
   )
