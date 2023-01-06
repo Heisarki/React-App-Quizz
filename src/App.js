@@ -45,6 +45,7 @@ export default App;
 <Home />
 <Questions />
 <GetResult />
+test
 <Exit />
 <PieChart />
 </div> */}
