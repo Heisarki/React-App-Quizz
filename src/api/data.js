@@ -6,7 +6,7 @@ description: null,
 answers: {
 answer_a: 'kubectl create secret generic db-user-pass --from-file=./username.txt --from-file=./password.txt',
 answer_b: 'kubectl generate secret generic db-user-pass --from-file=./username.txt --from-file=./password.txt',
-answer_c: null,
+answer_c: 'what',
 answer_d: null,
 answer_e: null,
 answer_f: null
@@ -564,3 +564,5 @@ difficulty: 'Easy'
 module.exports = {
     data
 }
+
+

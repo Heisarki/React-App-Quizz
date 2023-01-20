@@ -1,13 +1,15 @@
 import React from 'react'
 import style from './exit.module.css'
 import '../Animation.css'
+import { useSelector } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
 
 export default function Exit() {
     let navigate=useNavigate()
-    const correct = 6;
-    const incorrect = 3;
+    const correct = useSelector(state => state.correctAnswer);
+    console.log(correct);
+    const incorrect = 20-correct;
     return (
         <>
             <div className={style.gridContainer}>

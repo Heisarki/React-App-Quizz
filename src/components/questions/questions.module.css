@@ -72,8 +72,30 @@
     background-color: black;
     margin: 0.5px;
     transition: 0.5s;
-    padding: 8px;    
+    /* padding: 8px;     */
 }
+.select {
+    display: inline-flex;
+    width: 100%;
+    background-color: green;
+    margin: 0.5px;
+    transition: 0.5s;
+}
+.select label{
+    padding: 8px;
+}
+.select input{
+    margin: 10px;
+}
+.options label{
+    padding: 8px;
+}
+
+.options input {
+    margin: 10px;
+}
+
+
 .options2{
     background-color: green;
     margin: 2px;
@@ -81,9 +103,9 @@
     padding: 7px;    
 }
 
-.options:hover{
+/* .options:hover{
     margin: 20px;
-}
+} */
 
 /* Showing correct of wrong answer */
 

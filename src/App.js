@@ -27,7 +27,7 @@ function App() {
           <Route path="/questions" element={<Questions />}/>
             <Route path="/getresult" element={<GetResult />}/>
             <Route path="/exit" element={<Exit />}/>
-          <Route path="/piechart" element={<PieChart />}/>
+            <Route path="/piechart" element={<PieChart />}/>
             <Route path="/*" element={<Notfound />}/>
           </Routes>
         </div>

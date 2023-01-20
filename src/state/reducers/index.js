@@ -1,10 +1,8 @@
-import { combineReducers } from "redux";
-import { bankReducer, bugReducer } from "./bankReducer"
-
+import { combineReducers } from 'redux';
+import {correctAnswer} from './correctAnswer';
 
 const reducers = combineReducers({
-    bankReducer,
-    bugReducer
-})
+    correctAnswer,
+});
 
 export default reducers;
