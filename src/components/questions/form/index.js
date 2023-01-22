@@ -1,12 +1,12 @@
 import React, { useState, useEffect }  from 'react'
 import style from '../questions.module.css'
-import { data } from '../../../api/data'
+// import { data } from '../../../api/data'
 
 export default function ({obj}) {
 
     const [nextQuestions, setNext] = useState(0)
     // const [answer_key, setAnswer_key] = useState(new Map());
-    const { answer_key, setAnswer_key } = obj;
+    const { answer_key, setAnswer_key, data } = obj;
     const [bool, setBool] = useState(true)
     const [value, setValue] = useState();
 

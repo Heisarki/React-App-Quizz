@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import {correctAnswer} from './correctAnswer';
+import {correctAnswer, questions} from './correctAnswer';
 
 const reducers = combineReducers({
     correctAnswer,
+    questions
 });
 
 export default reducers;

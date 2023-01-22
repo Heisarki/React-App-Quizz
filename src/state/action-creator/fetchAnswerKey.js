@@ -4,3 +4,10 @@ export const fetchAnswerKey = (ans) => {
         payload: ans
     }
 }
+
+export const fetchQuestions = (payload) => {
+    return {
+        type: "FETCH_DATA",
+        payload: payload
+    }
+}
