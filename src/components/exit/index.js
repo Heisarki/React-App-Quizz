@@ -9,7 +9,7 @@ export default function Exit() {
     let navigate=useNavigate()
     const correct = useSelector(state => state.correctAnswer);
     console.log(correct);
-    const incorrect = 20-correct;
+    const incorrect = 10-correct;
     return (
         <>
             <div className={style.gridContainer}>

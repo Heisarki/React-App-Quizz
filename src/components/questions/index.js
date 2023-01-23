@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import style from './questions.module.css'
 import Form from './form'
 
@@ -6,13 +6,19 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchAnswerKey } from '../../state/action-creator/fetchAnswerKey';
 import axios from 'axios';
-// import { data } from '../../api/data'
+import { questions } from '../../api/data'
 
 export default function Questions() {
+    
     const [answer_key, setAnswer_key] = useState(new Map());
-
     const data = useSelector(store => store.questions);
-    console.log(data);
+
+
+    // const LOCAL_STORAGE_KEY = 'questions';
+    // useEffect(() => {
+    //     localStorage.setItem(LOCAL_STORAGE_KEY.JSON.stringify(data));
+    // },[data]);
+    
 
     const dispatch = useDispatch();
     let navigate = useNavigate()
@@ -54,8 +60,9 @@ export default function Questions() {
 
   return (
       <>
-          <Form obj={{answer_key, setAnswer_key, data}} />
-          <div className={style.submit}>
+          <Form obj={{ answer_key, setAnswer_key, data }} />
+          
+          <div className={style.submit}>              
               {/* <button onClick={() => { navigate('/getresult') }}>Submit</button> */}
               <button onClick={handleSubmit}>Submit</button>
           </div>

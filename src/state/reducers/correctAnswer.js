@@ -12,11 +12,3 @@ export const correctAnswer = (state = 0, {type, payload}) => {
     }
 }
 
-export const questions = (state = ["what"], { type, payload }) => {
-    switch (type) {
-        case "FETCH_DATA":
-            return payload
-        default:
-            return state;
-    }
-}

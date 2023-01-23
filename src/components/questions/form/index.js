@@ -56,7 +56,7 @@ export default function ({obj}) {
 
 
     const next = () => {
-        if (nextQuestions == 19)
+        if (nextQuestions == 9)
             return;
         if (answer_key.has(nextQuestions)) {
             setValue(answer_key.get(nextQuestions+1));

@@ -14,12 +14,16 @@ import Exit from './components/exit'
 import PieChart from './components/pieChart'
 import Notfound from './components/notfoud.js';
 
+import { useSelector, useDispatch } from 'react-redux';
+
+
 function App() {
+
 
   return (
     <Router>
       <div className="App">
-        <div className='Name'>
+        <div className='Heading'>
           <h1>Quizz</h1>
         </div>
           <Routes>

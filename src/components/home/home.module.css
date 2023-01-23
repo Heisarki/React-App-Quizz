@@ -47,3 +47,39 @@
     background-color: white;
     border: 2px solid black;
 } */
+
+.config {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.level {
+    margin: 5px;
+}
+
+.category {
+    margin: 5px;
+}
+
+.label {
+    margin: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.label option {
+    font-size: 14px;
+}
+  
+select {
+    border-radius: 5px;
+    padding: 3px;
+}
+  
+h1{
+    font-size: 22px;
+}
+
+  
+  

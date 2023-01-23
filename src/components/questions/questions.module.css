@@ -103,9 +103,10 @@
     padding: 7px;    
 }
 
-/* .options:hover{
-    margin: 20px;
-} */
+.options:hover{
+    padding: 5px;
+    transform: translateX(-5px);
+}
 
 /* Showing correct of wrong answer */
 
