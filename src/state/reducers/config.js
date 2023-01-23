@@ -1,4 +1,4 @@
-export const config = (state = ["Easy", "Kubernetes"], {type, payload}) => {
+export const config = (state = ["Easy", "Random"], {type, payload}) => {
     switch (type) {
         case "LEVEL":
             return [config[0] = payload, config[1] = state[1]];

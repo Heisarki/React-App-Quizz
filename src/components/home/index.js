@@ -14,7 +14,12 @@ export default function Home() {
     const category = useSelector(store => store.config[1]);
     console.log(level, category)
     
-    const URL = `https://quizapi.io/api/v1/questions?apiKey=WyMtytFunRzTMqUDNr0JctjXtnaEkTtO8jZCmU1D&difficulty=${level}&limit=10&tags=${category}`;
+    let URL = `https://quizapi.io/api/v1/questions?apiKey=WyMtytFunRzTMqUDNr0JctjXtnaEkTtO8jZCmU1D&difficulty=${level}&limit=10`;
+
+    if (category === "Random")
+        URL = `https://quizapi.io/api/v1/questions?apiKey=WyMtytFunRzTMqUDNr0JctjXtnaEkTtO8jZCmU1D&difficulty=${level}&limit=10`
+    else
+        URL = `https://quizapi.io/api/v1/questions?apiKey=WyMtytFunRzTMqUDNr0JctjXtnaEkTtO8jZCmU1D&difficulty=${level}&limit=10&tags=${category}`;
 
     
     console.log(URL);
@@ -65,13 +70,13 @@ export default function Home() {
                 <div className={style.category}>
                     <label className={style.label} htmlFor="category">Category</label>
                     <select id="category" onChange={handleChangeCategory}>
+                        <option value="Random">Random</option>      
                         <option value="Kubernetes">Kubernetes</option>
-                        {/* <option value="Random">Random</option>       */}
                         <option value="DevOps">DevOps</option>
                         {/* <option value="Programming">Programming</option> */}
                         <option value="Docker">Docker</option>
                         <option value="Linux">Linux</option>
-                        {/* <option value="Networking">Networking</option> */}
+                        <option value="mysql">MySQL</option>
                     </select>
                 </div>
             </div>
