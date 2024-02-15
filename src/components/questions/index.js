@@ -60,10 +60,12 @@ export default function Questions() {
 
   return (
       <>
-          <Form obj={{ answer_key, setAnswer_key, data }} />
-          
+          {
+              data.length === 0 
+                  ? <p style={{color: "white"}}>Loading question...</p>
+                  :<Form obj={{ answer_key, setAnswer_key, data }} />
+          }
           <div className={style.submit}>              
-              {/* <button onClick={() => { navigate('/getresult') }}>Submit</button> */}
               <button onClick={handleSubmit}>Submit</button>
           </div>
       </>
