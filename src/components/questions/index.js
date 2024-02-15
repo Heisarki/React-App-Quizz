@@ -7,12 +7,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchAnswerKey } from '../../state/action-creator/fetchAnswerKey';
 import axios from 'axios';
 import { questions } from '../../api/data'
+import { fetchQuestions } from '../../state/action-creator/fetchQuestions';
 
 export default function Questions() {
     
     const [answer_key, setAnswer_key] = useState(new Map());
     const data = useSelector(store => store.questions);
-
+    
+    useEffect(() => {
+        const localData = localStorage.getItem("_quizz_app_question_data")
+        if (localData)
+            dispatch(fetchQuestions(JSON.parse(localData)));
+    },[])
 
     // const LOCAL_STORAGE_KEY = 'questions';
     // useEffect(() => {
