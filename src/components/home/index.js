@@ -30,6 +30,7 @@ export default function Home() {
         const questions = await axios.get(URL)
             .catch(err => console.log(err));
         dispatch(fetchQuestions(questions.data));
+        localStorage.setItem("_quizz_app_question_data", JSON.stringify(questions.data))
     }
     useEffect(() => {
         data();
