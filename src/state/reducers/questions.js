@@ -1,4 +1,4 @@
-export const questions = (state = ["what"], { type, payload }) => {
+export const questions = (state = [], { type, payload }) => {
     switch (type) {
         case "FETCH_DATA":
             return payload
